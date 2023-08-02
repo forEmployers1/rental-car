@@ -6,13 +6,14 @@ import lombok.Getter;
 public class Car extends Rented {
     private final String title;
     private final CarType priceCode;
-    private final RentalCalculatorFactory rentalCalculatorFactory;
 
     public Car(String title, CarType priceCode, RentalCalculatorFactory rentalCalculatorFactory) {
+
+        super(rentalCalculatorFactory.createRentalCalculator(priceCode));
+
         this.title = title;
         this.priceCode = priceCode;
-        this.rentalCalculatorFactory = rentalCalculatorFactory;
-        setRentalCalculator(rentalCalculatorFactory.createRentalCalculator(priceCode));
+
     }
 
     @Override

@@ -35,8 +35,9 @@ public class Customer {
         StringBuilder res = new StringBuilder("Rental Record for " + name + "\n");
 
         rentals.stream().forEach(el -> res.append(el.toString()));
-        
-        res.append("Amount price is " + calculateTotalAmount() + " $\nYou earned " + calculateLoyaltyPoints() + " loyalty points");
+
+        res.append("Amount price is " + calculateTotalAmount() + " $\nYou earned " +
+                calculateLoyaltyPoints() + " loyalty points");
 
         return res.toString();
     }

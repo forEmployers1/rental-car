@@ -13,4 +13,7 @@ import lombok.Setter;
 public abstract class Rented  {
     private RentalCalculator rentalCalculator;
 
+    public Rented(RentalCalculator rentalCalculator) {
+        this.rentalCalculator = rentalCalculator;
+    }
 }

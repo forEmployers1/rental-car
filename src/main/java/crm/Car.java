@@ -5,14 +5,12 @@ import lombok.Getter;
 @Getter
 public class Car extends Rented {
     private final String title;
-    private final CarType priceCode;
 
-    public Car(String title, CarType priceCode, RentalCalculatorFactory rentalCalculatorFactory) {
+    public Car(String title, RentalCalculator rentalCalculator) {
 
-        super(rentalCalculatorFactory.createRentalCalculator(priceCode));
+        super(rentalCalculator);
 
         this.title = title;
-        this.priceCode = priceCode;
 
     }
 

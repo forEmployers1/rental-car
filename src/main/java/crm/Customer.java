@@ -15,11 +15,14 @@ public class Customer {
 
     public BigDecimal calculateTotalAmount() {
 
-        return rentals.stream().map(el -> el.calculateAmount()).reduce(BigDecimal::add).get();
+        return rentals.stream().map(el -> el.calculateAmount()).reduce(BigDecimal::add).
+                orElseThrow(() -> new IllegalStateException("Can not calculate total amount..."));
+
     }
 
     public int calculateLoyaltyPoints () {
-        return rentals.stream().map(el -> el.calculateLoyaltyPoint()).reduce((res, el) -> res + el).get();
+        return rentals.stream().map(el -> el.calculateLoyaltyPoint()).reduce((res, el) -> res + el).
+                orElseThrow(() -> new IllegalStateException("Can not calculate loyalty point..."));
 
     }
 

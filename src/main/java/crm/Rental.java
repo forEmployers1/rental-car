@@ -18,11 +18,11 @@ public class Rental {
 
     public BigDecimal calculateAmount() {
 
-        return rented.getRentalCalculator().calculateAmount(period);
+        return rented.getRentalCalculator().calculateAmount(this);
     }
 
     public int calculateLoyaltyPoint() {
-        return  rented.getRentalCalculator().calculateLoyaltyPoints(period);
+        return  rented.getRentalCalculator().calculateLoyaltyPoints(this);
     }
 
     @Override
@@ -45,4 +45,5 @@ public class Rental {
     public String toString() {
         return rented.toString() +'\t' +  calculateAmount().toString() + "$\n";
     }
+
 }

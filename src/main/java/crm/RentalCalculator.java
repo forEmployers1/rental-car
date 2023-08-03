@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 
 public interface RentalCalculator {
 
-    BigDecimal calculateAmount(Integer period);
+    BigDecimal calculateAmount(Rental rental);
 
-    int calculateLoyaltyPoints(Integer period);
+    int calculateLoyaltyPoints(Rental rental);
 }
